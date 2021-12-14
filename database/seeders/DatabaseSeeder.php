@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
                   'first_name' => 'Muhammad Iqbal',
                   'last_name' => 'Mubarak',
                   'email' => 'iqbalmubarak212@gmail.com',
-                  'password' => '123456',
+                  'password' => Hash::make('123456'),
                   'no_hp' => '0853043715'
                 ]
             ]);
@@ -143,7 +143,7 @@ class DatabaseSeeder extends Seeder
 
 
             ]);
-            
+
         DB::table('favorite_restaurants')->insert([
                 [
                   'restaurant_id' => 3,
