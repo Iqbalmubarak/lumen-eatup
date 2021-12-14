@@ -29,4 +29,4 @@ $router->post('/restaurants/get-data','RestaurantController@getData');
 $router->post('/restaurants/show','RestaurantController@show');
 $router->post('/restaurants','RestaurantController@store');
 $router->post('/favorite-restaurants/store','FavoriteRestaurantController@store');
-$router->delete('/favorite-restaurants/update','FavoriteRestaurantController@update');
+$router->delete('/favorite-restaurants/delete','FavoriteRestaurantController@delete');
