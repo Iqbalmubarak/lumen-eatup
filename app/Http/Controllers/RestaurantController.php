@@ -30,6 +30,9 @@ class RestaurantController extends Controller
             }else{
                 $restaurant->likes = 1;
             }
+
+            $count = FavoriteRestaurant::where('restaurant_id', $restaurant->restaurant_id)->count();
+            $restaurant->count = $count;
         }
 
         
@@ -63,21 +66,6 @@ class RestaurantController extends Controller
 
     public function getData(Request $request)
     {
-        // $restaurant = DB::select("SELECT 
-        //                 restaurants.name as restaurant_name,
-        //                 types.name as type_name, 
-        //                 restaurants.address as address,
-        //                 restaurants.avatar as avatar, 
-        //                 restaurants.status as status, 
-        //                 restaurants.rating as rating
-        //             FROM restaurants
-        //             LEFT JOIN types on restaurants.type_id = types.id");
-
-        // $data = new \stdClass();
-        // $data->restaurant = $restaurant;
-
-        // return response()->json($data);
-
         $restaurants = DB::select("SELECT 
                     restaurants.id as restaurant_id,
                     restaurants.name as restaurant_name,
@@ -100,6 +88,9 @@ class RestaurantController extends Controller
                 $restaurant->likes = 1;
             }
         }
+
+        $count = FavoriteRestaurant::where('restaurant_id', $restaurant->restaurant_id)->count();
+        $restaurant->count = $count;
         
         $data = new \stdClass();
         $data->restaurant = $restaurant;
