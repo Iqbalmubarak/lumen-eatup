@@ -8,7 +8,7 @@ use DB;
 
 class RestaurantController extends Controller
 {
-    public function index(Request $request){
+    public function allData(Request $request){
         $restaurants = DB::select("SELECT 
                         restaurants.id as restaurant_id,
                         restaurants.name as restaurant_name,
