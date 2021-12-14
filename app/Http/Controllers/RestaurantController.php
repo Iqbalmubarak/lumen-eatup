@@ -23,7 +23,7 @@ class RestaurantController extends Controller
         //dd($restaurants->restaurant_id);
         foreach($restaurants as $restaurant){
             $favorite = FavoriteRestaurant::where('restaurant_id', $restaurant->restaurant_id)
-                                            ->where('user_id', $request->user_id)
+                                            ->where('user_id', $request->id)
                                             ->first();
             if($favorite){
                 $restaurant->likes = 2;
