@@ -24,7 +24,7 @@ $router->post('/key', function(){
 
 $router->post('/login', 'AuthController@login');
 $router->post('/register', 'AuthController@register');
-$router->get('/restaurants','RestaurantController@index');
+$router->post('/restaurants/index','RestaurantController@index');
 $router->post('/restaurants/get-data','RestaurantController@getData');
 $router->post('/restaurants/show','RestaurantController@show');
 $router->post('/restaurants','RestaurantController@store');

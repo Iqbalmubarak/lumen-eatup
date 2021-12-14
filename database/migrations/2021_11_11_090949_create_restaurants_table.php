@@ -15,13 +15,15 @@ class CreateRestaurantsTable extends Migration
     {
         Schema::create('restaurants', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('type_id')->references('id')->on('types');
+            $table->integer('type_id')->unsigned();
             $table->string('name',50);
             $table->string('address');
             $table->string('avatar')->nullable();
-            $table->tinyinteger('status');
-            $table->double('rating');
+            $table->tinyinteger('status')->default(1);
+            $table->double('rating')->default(0);
             $table->timestamps();
+
+            $table->foreign('type_id')->references('id')->on('types')->onUpdate('cascade');
         });
     }
 

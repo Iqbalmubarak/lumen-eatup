@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 
-class Restaurant extends Model 
+class Menu extends Model 
 {
     use HasFactory;
 
@@ -17,7 +17,7 @@ class Restaurant extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'address', 'type_id', 'rating', 'status'
+        'name', 'address', 'notes', 'price', 'restaurant_id'
     ];
 
     public function menu()
@@ -28,11 +28,6 @@ class Restaurant extends Model
     public function comment()
     {
         return $this->hasMany(Comment::class, 'restaurant_id', 'id');
-    }
-
-    public function type()
-    {
-        return $this->hasOne(Type::class, 'id', 'type_id');
     }
 
 }

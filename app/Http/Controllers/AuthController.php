@@ -20,7 +20,7 @@ class AuthController extends BaseController
       $email = $request->input('email');
       $password = $request->input('password');
 
-      $user = User::select('email','first_name','last_name','token','password')->where('email', $email)->first();
+      $user = User::select('id','email','first_name','last_name','token','password')->where('email', $email)->first();
       if (!$user) {
           return response()->json(['message' => 'Login failed'], 401);
       }

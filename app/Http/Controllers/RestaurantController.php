@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Restaurant;
+use App\Models\FavoriteRestaurant;
 use DB;
 
 class RestaurantController extends Controller
 {
-    public function index(){
-        $restaurant = DB::select("SELECT 
+    public function index(Request $request){
+        $restaurants = DB::select("SELECT 
                         restaurants.id as restaurant_id,
                         restaurants.name as restaurant_name,
                         types.name as type_name, 
@@ -18,9 +19,33 @@ class RestaurantController extends Controller
                         restaurants.rating as rating
                     FROM restaurants
                     LEFT JOIN types on restaurants.type_id = types.id");
+        
+        //dd($restaurants->restaurant_id);
+        foreach($restaurants as $restaurant){
+            $favorite = FavoriteRestaurant::where('restaurant_id', $restaurant->restaurant_id)
+                                            ->where('user_id', $request->user_id)
+                                            ->first();
+            if($favorite){
+                $restaurant->likes = 2;
+            }else{
+                $restaurant->likes = 1;
+            }
+        }
+
+        
+        // foreach($restaurants as $restaurant){
+        //     $data->restaurant = new \stdClass();
+        //     $data->restaurant->restaurant_id = $restaurant->id;
+        //     $data->restaurant->restaurant_name = $restaurant->name;
+        //     $data->restaurant->type_name = $restaurant->type->name;
+        //     $data->restaurant->address = $restaurant->address;
+        //     $data->restaurant->avatar = $restaurant->avatar;
+        //     $data->restaurant->status = $restaurant->status;
+        //     $data->restaurant->rating = $restaurant->rating;
+        // }
 
         $data = new \stdClass();
-        $data->restaurant = $restaurant;
+        $data->restaurant = $restaurants;
 
         return response()->json($data);
     }
@@ -53,17 +78,28 @@ class RestaurantController extends Controller
 
         // return response()->json($data);
 
-            $restaurant = DB::select("SELECT 
-                        restaurants.id as restaurant_id,
-                        restaurants.name as restaurant_name,
-                        types.name as type_name, 
-                        restaurants.address as address,
-                        restaurants.avatar as avatar, 
-                        restaurants.status as status, 
-                        restaurants.rating as rating
-                    FROM restaurants
-                    LEFT JOIN types on restaurants.type_id = types.id
-                    WHERE restaurants.type_id = $request->type");
+        $restaurants = DB::select("SELECT 
+                    restaurants.id as restaurant_id,
+                    restaurants.name as restaurant_name,
+                    types.name as type_name, 
+                    restaurants.address as address,
+                    restaurants.avatar as avatar, 
+                    restaurants.status as status, 
+                    restaurants.rating as rating
+                FROM restaurants
+                LEFT JOIN types on restaurants.type_id = types.id
+                WHERE restaurants.type_id = $request->type");
+
+        foreach($restaurants as $restaurant){
+            $favorite = FavoriteRestaurant::where('restaurant_id', $restaurant->restaurant_id)
+                                            ->where('user_id', $request->user_id)
+                                            ->first();
+            if($favorite){
+                $restaurant->likes = 2;
+            }else{
+                $restaurant->likes = 1;
+            }
+        }
         
         $data = new \stdClass();
         $data->restaurant = $restaurant;
@@ -86,35 +122,32 @@ class RestaurantController extends Controller
     }
 
     public function sendNotification(String $name){
+        $curl = curl_init();
 
-$curl = curl_init();
+        curl_setopt_array($curl, array(
+        CURLOPT_URL => 'https://fcm.googleapis.com/fcm/send',
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => '',
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 0,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => 'POST',
+        CURLOPT_POSTFIELDS =>'{
+            "to" : "/topics/pengingat",
+                "notification" :{
+                    "title" : "Restaurant baru",
+                    "body" : "Restaurantnyaa adalaaaah '.$name.'" 
+                }
+        }',
+        CURLOPT_HTTPHEADER => array(
+            'Authorization: key=AAAA6-atPUA:APA91bEqtTmDuTD25nFP_yT29tWSoco1abmCMDCGd7vgkdGT6G_G6mWD7dxVzDaRy9Y1CFNDw5GcC5Tku5b1N5yIj7XtUdloYm6CFf9Nq2YUNF_qTuxZV7Q-VrTZMGwY6ebAQA4VUyHq',
+            'Content-Type: application/json'
+        ),
+        ));
 
-curl_setopt_array($curl, array(
-  CURLOPT_URL => 'https://fcm.googleapis.com/fcm/send',
-  CURLOPT_RETURNTRANSFER => true,
-  CURLOPT_ENCODING => '',
-  CURLOPT_MAXREDIRS => 10,
-  CURLOPT_TIMEOUT => 0,
-  CURLOPT_FOLLOWLOCATION => true,
-  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-  CURLOPT_CUSTOMREQUEST => 'POST',
-  CURLOPT_POSTFIELDS =>'{
-    "to" : "/topics/pengingat",
-        "notification" :{
-            "title" : "Restaurant baru",
-            "body" : "Restaurantnyaa adalaaaah '.$name.'" 
-        }
-}',
-  CURLOPT_HTTPHEADER => array(
-    'Authorization: key=AAAA6-atPUA:APA91bEqtTmDuTD25nFP_yT29tWSoco1abmCMDCGd7vgkdGT6G_G6mWD7dxVzDaRy9Y1CFNDw5GcC5Tku5b1N5yIj7XtUdloYm6CFf9Nq2YUNF_qTuxZV7Q-VrTZMGwY6ebAQA4VUyHq',
-    'Content-Type: application/json'
-  ),
-));
-
-$response = curl_exec($curl);
-
-curl_close($curl);
+        $response = curl_exec($curl);
+        curl_close($curl);
     }
 
-   
 }
