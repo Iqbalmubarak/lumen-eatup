@@ -25,4 +25,21 @@ class FavoriteRestaurantController extends Controller
         return response()->json($out);
     }
 
+    public function destroy(Request $request){
+        try{
+            $favorite = FavoriteRestaurant::where('user_id', $request->user_id)
+                                            ->where('restaurant_id', $request->restaurant_id)
+                                            ->first();
+            $favorite->delete();
+            $out = [
+                "message" => "Dislike"
+            ];
+        }catch(Exeption $e){
+            $out = [
+                "message" => "Failed"
+            ];
+        }
+        return response()->json($out);
+    }
+
 }
