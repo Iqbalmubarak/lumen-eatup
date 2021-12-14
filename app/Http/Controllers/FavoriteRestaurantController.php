@@ -9,10 +9,20 @@ use DB;
 class FavoriteRestaurantController extends Controller
 {
     public function store(Request $request){
-        $favorite = new FavoriteRestaurant;
-        $favorite->user_id = $request->user_id;
-        $favorite->restaurant_id = $request->restaurant_id;
-        $favorite->save();
+        try{
+            $favorite = new FavoriteRestaurant;
+            $favorite->user_id = $request->user_id;
+            $favorite->restaurant_id = $request->restaurant_id;
+            $favorite->save();
+            $out = [
+                "message" => "Liked"
+            ];
+        }catch(Exeption $e){
+            $out = [
+                "message" => "Failed"
+            ];
+        }
+        return response()->json($out);
     }
 
 }
