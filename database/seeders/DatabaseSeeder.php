@@ -25,12 +25,6 @@ class DatabaseSeeder extends Seeder
                 ]
             ]);
 
-        DB::table('favorite_restaurants')->insert([
-                [
-                  'restaurant_id' => 3,
-                  'user_id' => 1
-                ]
-            ]);
 
         DB::table('types')->insert([
                 ['name' => 'Japanesse Food'],
@@ -148,6 +142,13 @@ class DatabaseSeeder extends Seeder
           ]
 
 
+            ]);
+            
+        DB::table('favorite_restaurants')->insert([
+                [
+                  'restaurant_id' => 3,
+                  'user_id' => 1
+                ]
             ]);
 
         
