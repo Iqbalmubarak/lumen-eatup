@@ -93,7 +93,7 @@ class RestaurantController extends Controller
         $restaurant->count = $count;
         
         $data = new \stdClass();
-        $data->restaurant = $restaurant;
+        $data->restaurant = $restaurants;
 
         return response()->json($data);
 
