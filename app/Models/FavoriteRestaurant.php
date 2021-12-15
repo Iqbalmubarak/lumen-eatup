@@ -20,4 +20,9 @@ class FavoriteRestaurant extends Model
         'restaurant_id', 'user_id'
     ];
 
+    public function restaurant()
+    {
+        return $this->hasOne(Restaurant::class, 'id', 'restaurant_id');
+    }
+
 }
