@@ -22,7 +22,6 @@ class FavoriteRestaurantController extends Controller
                     LEFT JOIN types on restaurants.type_id = types.id
                     WHERE favorite_restaurants.user_id = $request->id");
 
-        dd($restaurants);
         //dd($restaurants->restaurant_id);
         foreach($restaurants as $restaurant){
             $favorite = FavoriteRestaurant::where('restaurant_id', $restaurant->restaurant_id)
