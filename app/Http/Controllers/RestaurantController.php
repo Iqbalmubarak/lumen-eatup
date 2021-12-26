@@ -54,12 +54,26 @@ class RestaurantController extends Controller
     }
 
     public function show(Request $request){
-        $menu = DB::select("SELECT id, name, notes, price, avatar
+        $menus = DB::select("SELECT id, name, notes, price, avatar
                                     FROM menus
                                     WHERE restaurant_id = $request->restaurant_id");
 
+        foreach($menus as $menu){
+            $favorite = FavoriteMenu::where('menu_id', $menu->id)
+                                            ->where('user_id', $request->id)
+                                            ->first();
+            if($favorite){
+                $menu->likes = 2;
+            }else{
+                $menu->likes = 1;
+            }
+        }
+
+        $count = FavoriteMenu::where('menu_id', $menu->id)->count();
+        $menu->count = $count;
+
         $data = new \stdClass();
-        $data->menu = $menu;
+        $data->menu = $menus;
 
         return response()->json($data);
     }

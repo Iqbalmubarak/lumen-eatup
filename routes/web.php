@@ -31,3 +31,6 @@ $router->post('/restaurants','RestaurantController@store');
 $router->post('/favorite-restaurants/store','FavoriteRestaurantController@store');
 $router->post('/favorite-restaurants/destroy','FavoriteRestaurantController@destroy');
 $router->post('/favorite-restaurants/all-data','FavoriteRestaurantController@allData');
+$router->post('/favorite-menu/store','FavoriteMenuController@store');
+$router->post('/favorite-menu/destroy','FavoriteMenuController@destroy');
+$router->post('/favorite-menu/all-data','FavoriteMenuController@allData');
