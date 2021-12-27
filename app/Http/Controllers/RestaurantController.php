@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Restaurant;
-use App\Models\FavoriteRestaurant;
+use App\Models\FavoriteMenu;
 use DB;
 
 class RestaurantController extends Controller
