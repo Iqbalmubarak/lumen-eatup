@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Restaurant;
 use App\Models\FavoriteMenu;
+use App\Models\FavoriteRestaurant;
 use DB;
 
 class RestaurantController extends Controller
