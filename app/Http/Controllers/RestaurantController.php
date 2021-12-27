@@ -67,10 +67,9 @@ class RestaurantController extends Controller
             }else{
                 $menu->likes = 1;
             }
+            $count = FavoriteMenu::where('menu_id', $menu->id)->count();
+            $menu->count = $count;
         }
-
-        $count = FavoriteMenu::where('menu_id', $menu->id)->count();
-        $menu->count = $count;
 
         $data = new \stdClass();
         $data->menu = $menus;
@@ -101,10 +100,9 @@ class RestaurantController extends Controller
             }else{
                 $restaurant->likes = 1;
             }
+            $count = FavoriteRestaurant::where('restaurant_id', $restaurant->restaurant_id)->count();
+            $restaurant->count = $count;
         }
-
-        $count = FavoriteRestaurant::where('restaurant_id', $restaurant->restaurant_id)->count();
-        $restaurant->count = $count;
         
         $data = new \stdClass();
         $data->restaurant = $restaurants;
