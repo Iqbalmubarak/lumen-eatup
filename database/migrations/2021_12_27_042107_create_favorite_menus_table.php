@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFavoriteMenuTable extends Migration
+class CreateFavoriteMenusTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateFavoriteMenuTable extends Migration
      */
     public function up()
     {
-        Schema::create('favorite_menu', function (Blueprint $table) {
+        Schema::create('favorite_menus', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('menu_id')->unsigned();
             $table->integer('user_id')->unsigned();
@@ -31,6 +31,6 @@ class CreateFavoriteMenuTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('favorite_menu');
+        Schema::dropIfExists('favorite_menus');
     }
 }
