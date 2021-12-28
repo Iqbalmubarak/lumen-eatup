@@ -41,6 +41,8 @@ class DatabaseSeeder extends Seeder
             'type_id' => '1',
             'name' => 'Kedai Mie Ramen & Sushi',
             'address' => 'Jalan Batang Kampar',
+            'latitude' => '-0.9438888888888889',
+            'longtitude' => '100.35583333333332',
             'avatar' => '@drawable/japanese1',
             'status' => '1',
             'rating' => '4.5'
@@ -49,6 +51,8 @@ class DatabaseSeeder extends Seeder
             'type_id' => '1',
             'name' => 'Sushi R&R',
             'address' => 'Jalan Purus',
+            'latitude' => '-0.9413888888888889',
+            'longtitude' => '100.35416666666666',
             'avatar' => '@drawable/japanese2',
             'status' => '1',
             'rating' => '4.7'
@@ -57,6 +61,8 @@ class DatabaseSeeder extends Seeder
             'type_id' => '5',
             'name' => 'Gomawo korean food',
             'address' => 'Jalan S.Parman',
+            'latitude' => '-0.9311111111111111',
+            'longtitude' => '100.41472222222222',
             'avatar' => '@drawable/korean1',
             'status' => '1',
             'rating' => '3.8'
@@ -65,6 +71,8 @@ class DatabaseSeeder extends Seeder
             'type_id' => '1',
             'name' => 'Ichiban Sushi',
             'address' => 'Jalan Khatib',
+            'latitude' => '-0.9125',
+            'longtitude' => '100.35722222222222',
             'avatar' => '@drawable/japanese3',
             'status' => '1',
             'rating' => '4.2'
@@ -73,6 +81,8 @@ class DatabaseSeeder extends Seeder
             'type_id' => '5',
             'name' => 'Pocajjang Padang',
             'address' => 'Jalan Batang Kampar',
+            'latitude' => '-0.9338888888888889',
+            'longtitude' => '100.36333333333333',
             'avatar' => '@drawable/korean2',
             'status' => '1',
             'rating' => '4.5'
@@ -80,15 +90,19 @@ class DatabaseSeeder extends Seeder
           [
             'type_id' => '3',
             'name' => 'Janji Jiwa',
-            'address' => 'Jalan S.Parman',
+            'address' => 'Jalan Batang Arau',
+            'latitude' => '-0.9636111111111111',
+            'longtitude' => '100.36083333333333',
             'avatar' => '@drawable/coffee2',
             'status' => '1',
             'rating' => '3.8'
           ],
           [
             'type_id' => '2',
-            'name' => 'Gelato Ice Cream',
+            'name' => 'Ngulik Gelato Ice Cream',
             'address' => 'Jalan pondok',
+            'latitude' => '-0.9583333333333333',
+            'longtitude' => '100.36527777777778',
             'avatar' => '@drawable/dessert3',
             'status' => '1',
             'rating' => '4.2'
@@ -97,6 +111,8 @@ class DatabaseSeeder extends Seeder
             'type_id' => '3',
             'name' => 'Foresthree',
             'address' => 'Jalan nipah',
+            'latitude' => '-0.9633333333333333',
+            'longtitude' => '100.36166666666666',
             'avatar' => '@drawable/coffee3',
             'status' => '1',
             'rating' => '4.5'
@@ -105,6 +121,8 @@ class DatabaseSeeder extends Seeder
             'type_id' => '4',
             'name' => 'Bread Talk',
             'address' => 'Basko Mall',
+            'latitude' => '-0.9016666666666667',
+            'longtitude' => '100.35083333333333',
             'avatar' => '@drawable/pastry2',
             'status' => '1',
             'rating' => '3.8'
@@ -113,6 +131,8 @@ class DatabaseSeeder extends Seeder
             'type_id' => '4',
             'name' => 'RotiO',
             'address' => 'Jalan Siteba',
+            'latitude' => '-0.8966666666666666',
+            'longtitude' => '100.36666666666666',
             'avatar' => '@drawable/pastry1',
             'status' => '1',
             'rating' => '3.8'
@@ -120,15 +140,19 @@ class DatabaseSeeder extends Seeder
           [
             'type_id' => '6',
             'name' => 'McD',
-            'address' => 'Jalan A. Yani',
+            'address' => 'Jalan Khatib Sulaiman',
+            'latitude' => '-0.9116666666666667',
+            'longtitude' => '100.35583333333332',
             'avatar' => '@drawable/fastfood1',
             'status' => '1',
             'rating' => '4.2'
           ],
           [
             'type_id' => '2',
-            'name' => 'Ice Cream ku',
+            'name' => 'Daily Scoop Gelato',
             'address' => 'Jalan nipah',
+            'latitude' => '-0.9586111111111111',
+            'longtitude' => '100.36083333333333',
             'avatar' => '@drawable/dessert1',
             'status' => '1',
             'rating' => '4.5'
@@ -136,11 +160,14 @@ class DatabaseSeeder extends Seeder
           [
             'type_id' => '6',
             'name' => 'KFC',
-            'address' => 'Jalan ByPass',
+            'address' => 'Jalan Veteran',
+            'latitude' => '-0.9422222222222222',
+            'longtitude' => '100.35416666666666',
             'avatar' => '@drawable/fastfood2',
             'status' => '1',
             'rating' => '4.5'
           ]
+
 
 
             ]);

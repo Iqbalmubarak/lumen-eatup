@@ -18,6 +18,8 @@ class CreateRestaurantsTable extends Migration
             $table->integer('type_id')->unsigned();
             $table->string('name',50);
             $table->string('address');
+            $table->double('latitude');
+            $table->double('longtitude');
             $table->string('avatar')->nullable();
             $table->tinyinteger('status')->default(1);
             $table->double('rating')->default(0);
