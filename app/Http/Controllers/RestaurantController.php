@@ -65,10 +65,10 @@ class RestaurantController extends Controller
                         restaurants.rating as rating,
                         , (
                             6371 * acos (
-                                cos ( radians(-7.785973) )
+                                cos ( radians($request->latitude) )
                                 * cos( radians( latitude ) )
-                                * cos( radians( longitude ) - radians(110.399957) )
-                                + sin ( radians(-7.785973) )
+                                * cos( radians( longtitude ) - radians($request->longitude) )
+                                + sin ( radians($request->latitude) )
                                 * sin( radians( latitude ) )
                             )
                         ) AS distance
