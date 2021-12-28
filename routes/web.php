@@ -28,6 +28,7 @@ $router->post('/restaurants/all-data','RestaurantController@allData');
 $router->post('/restaurants/get-data','RestaurantController@getData');
 $router->post('/restaurants/show','RestaurantController@show');
 $router->post('/restaurants','RestaurantController@store');
+$router->post('/restaurants/around','RestaurantController@around');
 $router->post('/favorite-restaurants/store','FavoriteRestaurantController@store');
 $router->post('/favorite-restaurants/destroy','FavoriteRestaurantController@destroy');
 $router->post('/favorite-restaurants/all-data','FavoriteRestaurantController@allData');
