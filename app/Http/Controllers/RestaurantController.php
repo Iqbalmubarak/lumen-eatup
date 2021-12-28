@@ -63,18 +63,13 @@ class RestaurantController extends Controller
                         restaurants.avatar as avatar, 
                         restaurants.status as status, 
                         restaurants.rating as rating,
-                        , (
-                            6371 * acos (
-                                cos ( radians($request->latitude) )
-                                * cos( radians( latitude ) )
-                                * cos( radians( longtitude ) - radians($request->longitude) )
-                                + sin ( radians($request->latitude) )
-                                * sin( radians( latitude ) )
-                            )
-                        ) AS distance
+                        restaurants.latitude as latitude,
+                        restaurants.longtitude as longtitude
                     FROM restaurants
                     LEFT JOIN types on restaurants.type_id = types.id
-                    HAVING distance <= 5");
+                    WHERE ( POW( ( 69.1 * ( longtitude - $request->longitude ) * cos( 40.711676 / 57.3 ) ) , 2 ) + 
+								POW( ( 69.1 * ( latitude - $request->latitude ) ) , 2 ) ) < ( 1 *1 )");
+								
         
         //dd($restaurants->restaurant_id);
         foreach($restaurants as $restaurant){
