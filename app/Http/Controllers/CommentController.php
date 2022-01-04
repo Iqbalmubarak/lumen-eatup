@@ -11,13 +11,7 @@ class CommentController extends Controller
 {
     //Function untuk Login
     function store(Request $request) {
-        $this->validate($request, [
-            'comment' => 'required',
-            'rating' => 'required'
-        ]);
 
-        $comment = $request->input('comment');
-        $rating = $request->input('rating');
 
         $comments = DB::select("SELECT *
                     FROM comments
