@@ -11,7 +11,7 @@ class FavoriteMenuController extends Controller
     public function allData(Request $request){
         $menus = DB::select("SELECT 
                         menus.id as menu_id,
-                        menus.name as menu_name,
+                        menus.name as name,
                         menus.notes as notes,
                         menus.avatar as avatar, 
                         menus.price as price
