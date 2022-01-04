@@ -24,9 +24,7 @@ class CommentController extends Controller
                     WHERE user_id = $request->id
                     AND restaurant_id = $request->restaurant_id");
 
-        if ($comments) {
-            return response()->json(['message' => 'You already comment!'], 401);
-        }else{
+       
           $comments = new Comment;
           $comments->user_id = $request->id;
           $comments->restaurant_id = $request->restaurant_id;
@@ -34,7 +32,7 @@ class CommentController extends Controller
           $comments->rating = $request->rating;
           $comments->save();
           return response()->json(['message' => 'Your comment added successfully']);
-        }
+        
     }
 
 }
