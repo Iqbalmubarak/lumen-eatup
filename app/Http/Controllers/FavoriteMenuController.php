@@ -9,32 +9,29 @@ use DB;
 class FavoriteMenuController extends Controller
 {
     public function allData(Request $request){
-        $restaurants = DB::select("SELECT 
-                        restaurants.id as restaurant_id,
-                        restaurants.name as restaurant_name,
-                        types.name as type_name, 
-                        restaurants.address as address,
-                        restaurants.avatar as avatar, 
-                        restaurants.status as status, 
-                        restaurants.rating as rating
-                    FROM favorite_restaurants
-                    LEFT JOIN restaurants on favorite_restaurants.restaurant_id = restaurants.id
-                    LEFT JOIN types on restaurants.type_id = types.id
-                    WHERE favorite_restaurants.user_id = $request->id");
+        $menus = DB::select("SELECT 
+                        menus.id as menu_id,
+                        menus.name as menu_name,
+                        menus.notes as notes,
+                        menus.avatar as avatar, 
+                        menus.price as price
+                    FROM favorite_menus
+                    LEFT JOIN menus on favorite_menus.menu_id = menus.id
+                    WHERE favorite_menus.user_id = $request->id");
 
         //dd($restaurants->restaurant_id);
-        foreach($restaurants as $restaurant){
-            $favorite = FavoriteMenu::where('restaurant_id', $restaurant->restaurant_id)
+        foreach($menus as $menu){
+            $favorite = FavoriteMenu::where('menu_id', $menu->menu_id)
                                             ->where('user_id', $request->id)
                                             ->first();
             if($favorite){
-                $restaurant->likes = 2;
+                $menu->likes = 2;
             }else{
-                $restaurant->likes = 1;
+                $menu->likes = 1;
             }
 
-            $count = FavoriteMenu::where('restaurant_id', $restaurant->restaurant_id)->count();
-            $restaurant->count = $count;
+            $count = FavoriteMenu::where('menu_id', $menu->menu_id)->count();
+            $menu->count = $count;
         }
 
         
@@ -50,7 +47,7 @@ class FavoriteMenuController extends Controller
         // }
 
         $data = new \stdClass();
-        $data->restaurant = $restaurants;
+        $data->menu = $menus;
 
         return response()->json($data);
     }
