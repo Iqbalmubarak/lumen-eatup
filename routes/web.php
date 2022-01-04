@@ -35,3 +35,4 @@ $router->post('/favorite-restaurants/all-data','FavoriteRestaurantController@all
 $router->post('/favorite-menu/store','FavoriteMenuController@store');
 $router->post('/favorite-menu/destroy','FavoriteMenuController@destroy');
 $router->post('/favorite-menu/all-data','FavoriteMenuController@allData');
+$router->post('/comments','CommentController@store');
