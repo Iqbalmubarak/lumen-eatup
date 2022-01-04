@@ -11,6 +11,10 @@ class CommentController extends Controller
 {
     //Function untuk Login
     function store(Request $request) {
+        $this->validate($request, [
+            'comment' => 'required',
+            'rating' => 'required'
+        ]);
 
 
         $comments = DB::select("SELECT *
