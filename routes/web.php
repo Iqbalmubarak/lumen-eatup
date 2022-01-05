@@ -37,3 +37,4 @@ $router->post('/favorite-menu/destroy','FavoriteMenuController@destroy');
 $router->post('/favorite-menu/all-data','FavoriteMenuController@allData');
 $router->post('/comments','CommentController@store');
 $router->post('/comments/get-data','CommentController@getData');
+$router->post('/users/update','UserController@update');
