@@ -45,7 +45,7 @@ class DatabaseSeeder extends Seeder
             'longtitude' => '100.35583333333332',
             'avatar' => '@drawable/japanese1',
             'status' => '1',
-            'rating' => '4.5'
+            'rating' => '0.0'
           ],
           [
             'type_id' => '1',
@@ -55,7 +55,7 @@ class DatabaseSeeder extends Seeder
             'longtitude' => '100.35416666666666',
             'avatar' => '@drawable/japanese2',
             'status' => '1',
-            'rating' => '4.7'
+            'rating' => '0.0'
           ],
           [
             'type_id' => '5',
@@ -65,7 +65,7 @@ class DatabaseSeeder extends Seeder
             'longtitude' => '100.41472222222222',
             'avatar' => '@drawable/korean1',
             'status' => '1',
-            'rating' => '3.8'
+            'rating' => '0.0'
           ],
           [
             'type_id' => '1',
@@ -75,7 +75,7 @@ class DatabaseSeeder extends Seeder
             'longtitude' => '100.35722222222222',
             'avatar' => '@drawable/japanese3',
             'status' => '1',
-            'rating' => '4.2'
+            'rating' => '0.0'
           ],
           [
             'type_id' => '5',
@@ -85,7 +85,7 @@ class DatabaseSeeder extends Seeder
             'longtitude' => '100.36333333333333',
             'avatar' => '@drawable/korean2',
             'status' => '1',
-            'rating' => '4.5'
+            'rating' => '0.0'
           ],
           [
             'type_id' => '3',
@@ -95,7 +95,7 @@ class DatabaseSeeder extends Seeder
             'longtitude' => '100.36083333333333',
             'avatar' => '@drawable/coffee2',
             'status' => '1',
-            'rating' => '3.8'
+            'rating' => '0.0'
           ],
           [
             'type_id' => '2',
@@ -105,7 +105,7 @@ class DatabaseSeeder extends Seeder
             'longtitude' => '100.36527777777778',
             'avatar' => '@drawable/dessert3',
             'status' => '1',
-            'rating' => '4.2'
+            'rating' => '0.0'
           ],
           [
             'type_id' => '3',
@@ -115,7 +115,7 @@ class DatabaseSeeder extends Seeder
             'longtitude' => '100.36166666666666',
             'avatar' => '@drawable/coffee3',
             'status' => '1',
-            'rating' => '4.5'
+            'rating' => '0.0'
           ],
           [
             'type_id' => '4',
@@ -125,7 +125,7 @@ class DatabaseSeeder extends Seeder
             'longtitude' => '100.35083333333333',
             'avatar' => '@drawable/pastry2',
             'status' => '1',
-            'rating' => '3.8'
+            'rating' => '0.0'
           ],
           [
             'type_id' => '4',
@@ -135,7 +135,7 @@ class DatabaseSeeder extends Seeder
             'longtitude' => '100.36666666666666',
             'avatar' => '@drawable/pastry1',
             'status' => '1',
-            'rating' => '3.8'
+            'rating' => '0.0'
           ],
           [
             'type_id' => '6',
@@ -145,7 +145,7 @@ class DatabaseSeeder extends Seeder
             'longtitude' => '100.35583333333332',
             'avatar' => '@drawable/fastfood1',
             'status' => '1',
-            'rating' => '4.2'
+            'rating' => '0.0'
           ],
           [
             'type_id' => '2',
@@ -155,7 +155,7 @@ class DatabaseSeeder extends Seeder
             'longtitude' => '100.36083333333333',
             'avatar' => '@drawable/dessert1',
             'status' => '1',
-            'rating' => '4.5'
+            'rating' => '0.0'
           ],
           [
             'type_id' => '6',
@@ -165,7 +165,7 @@ class DatabaseSeeder extends Seeder
             'longtitude' => '100.35416666666666',
             'avatar' => '@drawable/fastfood2',
             'status' => '1',
-            'rating' => '4.5'
+            'rating' => '0.0'
           ]
 
 
