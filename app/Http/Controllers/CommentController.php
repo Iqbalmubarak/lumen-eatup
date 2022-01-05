@@ -47,4 +47,20 @@ class CommentController extends Controller
         
     }
 
+    public function getData(Request $request)
+    {
+        $comments = DB::select("SELECT 
+                comments.comment, comments.rating, users.first_name as first_name, users.last_name as last_name
+                FROM comments
+                LEFT JOIN users on comments.user_id = users.id
+                WHERE comments.restaurant_id = $request->restaurant_id");
+        
+        $data = new \stdClass();
+        $data->comments = $comments;
+
+        return response()->json($data);
+
+        
+    }
+
 }
