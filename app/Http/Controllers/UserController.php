@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\FavoriteMenu;
+use Illuminate\Support\Facades\Hash;
 use DB;
 
 class UserController extends Controller
@@ -17,38 +18,12 @@ class UserController extends Controller
         return response()->json(['message' => 'Your profile updated successfully']);
     }
 
-    public function store(Request $request){
-        try{
-            $favorite = new FavoriteMenu;
-            $favorite->user_id = $request->user_id;
-            $favorite->menu_id = $request->menu_id;
-            $favorite->save();
-            $out = [
-                "message" => "Liked"
-            ];
-        }catch(Exeption $e){
-            $out = [
-                "message" => "Failed"
-            ];
-        }
-        return response()->json($out);
-    }
+    public function changePassword(Request $request){
+        $user = User::find($request->id);
+        $user->password = Hash::make($request->input('password'));
+        $user->save();
 
-    public function destroy(Request $request){
-        try{
-            $favorite = FavoriteMenu::where('user_id', $request->user_id)
-                                            ->where('menu_id', $request->menu_id)
-                                            ->first();
-            $favorite->delete();
-            $out = [
-                "message" => "Dislike"
-            ];
-        }catch(Exeption $e){
-            $out = [
-                "message" => "Failed"
-            ];
-        }
-        return response()->json($out);
+        return response()->json(['message' => 'Your password changed successfully']);
     }
 
 }
