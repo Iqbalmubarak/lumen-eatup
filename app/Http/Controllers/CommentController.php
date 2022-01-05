@@ -40,10 +40,10 @@ class CommentController extends Controller
 
         $restaurant = Restaurant::find($request->restaurant_id);
         $restaurant->rating = $rating;
-        $restaurant-save();
+        $restaurant->save();
 
 
-        return response()->json(['message' => 'Your comment added successfully']);
+        return response()->json(['message' => 'Your comment added successfully', 'rating' => $rating]);
         
     }
 
