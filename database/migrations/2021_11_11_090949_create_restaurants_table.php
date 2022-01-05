@@ -22,7 +22,7 @@ class CreateRestaurantsTable extends Migration
             $table->double('longtitude');
             $table->string('avatar')->nullable();
             $table->tinyinteger('status')->default(1);
-            $table->double('rating')->default(0);
+            $table->float('rating')->default(0);
             $table->timestamps();
 
             $table->foreign('type_id')->references('id')->on('types')->onUpdate('cascade');
