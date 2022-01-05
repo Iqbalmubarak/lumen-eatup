@@ -38,7 +38,6 @@ class CommentController extends Controller
 
         $rating = $sum/ $count;
         $rating = round($rating,1);
-        dd($rating);
 
         $restaurant = Restaurant::find($request->restaurant_id);
         $restaurant->rating = $rating;
