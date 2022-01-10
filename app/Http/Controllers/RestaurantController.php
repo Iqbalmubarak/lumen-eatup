@@ -191,7 +191,7 @@ class RestaurantController extends Controller
             "to" : "/topics/pengingat",
                 "notification" :{
                     "title" : "Restaurant baru",
-                    "body" : "Restaurantnyaa adalaaaah '.$name.'" 
+                    "body" : "'.$name.' adalah restaurant baru lho! " 
                 }
         }',
         CURLOPT_HTTPHEADER => array(

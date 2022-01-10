@@ -201,6 +201,181 @@ class DatabaseSeeder extends Seeder
               'notes' => 'Burger dengan daging paha ayam goreng yang empuk, renyah dan pedas',
               'price' => '22000',
               'avatar' => '@drawable/mcspicy'
+             ],
+             [
+              'restaurant_id' => '1',
+              'name' => 'Ramen Special',
+              'notes' => 'Mie khas jepang dengan telur rebus',
+              'price' => '18000',
+              'avatar' => '@drawable/ramen'
+             ],
+             [
+              'restaurant_id' => '1',
+              'name' => 'Udon Curry',
+              'notes' => 'Mi khas jepang',
+              'price' => '25000',
+              'avatar' => '@drawable/udon'
+             ],
+             [
+              'restaurant_id' => '2',
+              'name' => 'Salmon Nigiri',
+              'notes' => 'Irisan ikan salmon',
+              'price' => '28000',
+              'avatar' => '@drawable/salmon'
+             ],
+             [
+              'restaurant_id' => '2',
+              'name' => 'Tuna Nigiri',
+              'notes' => 'Irisan ikan tuna',
+              'price' => '25000',
+              'avatar' => '@drawable/tuna'
+             ],
+             [
+              'restaurant_id' => '3',
+              'name' => 'jajangmyeon',
+              'notes' => 'Mie dengan saus pasta kacang kedelai hitam yang populer di Korea',
+              'price' => '35000',
+              'avatar' => '@drawable/jajangmyeon'
+             ],
+             [
+              'restaurant_id' => '3',
+              'name' => 'Japchae',
+              'notes' => 'Sohun (dang myeon) yang dicampur dengan berbagai jenis sayuran dan daging sapi',
+              'price' => '18000',
+              'avatar' => '@drawable/japchae'
+             ],
+             [
+              'restaurant_id' => '4',
+              'name' => 'Ichiban Sushi Attack',
+              'notes' => 'Gabungan berbagai sushi khas icihiban',
+              'price' => '120000',
+              'avatar' => '@drawable/sushi'
+             ],
+             [
+              'restaurant_id' => '4',
+              'name' => 'Gyoza',
+              'notes' => 'Dumpling khas Jepang yang bisa diisi dengan campuran daging ayam',
+              'price' => '15000',
+              'avatar' => '@drawable/gyoza'
+             ],
+             [
+              'restaurant_id' => '5',
+              'name' => 'Premium Beef',
+              'notes' => 'Minuman(Lemon Tea/Blackcurrant)',
+              'price' => '99000',
+              'avatar' => '@drawable/premium'
+             ],
+             [
+              'restaurant_id' => '5',
+              'name' => 'Wagyu Beef',
+              'notes' => 'Minuman(Lemon Tea/Blackcurrant)',
+              'price' => '129000',
+              'avatar' => '@drawable/wagyu'
+             ],
+             [
+              'restaurant_id' => '6',
+              'name' => 'Caramel Machiato',
+              'notes' => 'Espresso yang dicampur dengan sirup vanilla yang creamy',
+              'price' => '22000',
+              'avatar' => '@drawable/caramel'
+             ],
+             [
+              'restaurant_id' => '6',
+              'name' => 'Vanilla Latte',
+              'notes' => 'Espresso short serta creamy susu dan sirup vanilla',
+              'price' => '22000',
+              'avatar' => '@drawable/vanilla'
+             ],
+             [
+              'restaurant_id' => '6',
+              'name' => 'Tuna Mayo Toast',
+              'notes' => 'Toast dengan isi tuna dan mayo',
+              'price' => '28000',
+              'avatar' => '@drawable/toast'
+             ],
+             [
+              'restaurant_id' => '7',
+              'name' => 'Es Krim Gelato Cone 1 Rasa',
+              'notes' => 'Rasa hazelnut coklat, vanilla, matcha, dll',
+              'price' => '20000',
+              'avatar' => '@drawable/cone'
+             ],
+             [
+              'restaurant_id' => '7',
+              'name' => 'Es Krim Gelato Cone 2 Rasa',
+              'notes' => 'Rasa hazelnut coklat, vanilla, matcha, dll',
+              'price' => '25000',
+              'avatar' => '@drawable/eskrim'
+             ],
+             [
+              'restaurant_id' => '8',
+              'name' => 'Oreo Cookies & Cream',
+              'notes' => 'Perpaduan antara oreo, cookies dan cream',
+              'price' => '25000',
+              'avatar' => '@drawable/oreo'
+             ],
+             [
+              'restaurant_id' => '8',
+              'name' => 'Es Kopi Susu',
+              'notes' => 'Es kopi susu signature',
+              'price' => '18000',
+              'avatar' => '@drawable/susu'
+             ],
+             [
+              'restaurant_id' => '9',
+              'name' => 'Red Velvet Slice',
+              'notes' => 'Potongan kue red velvet ala breadtalk',
+              'price' => '27000',
+              'avatar' => '@drawable/redvelvet'
+             ],
+             [
+              'restaurant_id' => '9',
+              'name' => 'Tiramisu Slice',
+              'notes' => 'Potongan kue tiramisu ala breadtalk',
+              'price' => '21000',
+              'avatar' => '@drawable/tiramisu'
+             ],
+             [
+              'restaurant_id' => '10',
+              'name' => 'Roti O',
+              'notes' => 'Roti khas roti o',
+              'price' => '12000',
+              'avatar' => '@drawable/rotio'
+             ],
+             [
+              'restaurant_id' => '10',
+              'name' => 'Beef Pastry Roti O',
+              'notes' => 'Beef pastry khas roti o',
+              'price' => '20000',
+              'avatar' => '@drawable/beefpastry'
+             ],
+             [
+              'restaurant_id' => '12',
+              'name' => 'Gelato 1 Rasa',
+              'notes' => 'Rasa hazelnut coklat, vanilla, matcha, dll',
+              'price' => '25000',
+              'avatar' => '@drawable/1rasa'
+             ],
+             [
+              'restaurant_id' => '12',
+              'name' => 'Gelato 2 Rasa',
+              'notes' => 'Rasa hazelnut coklat, vanilla, matcha, dll',
+              'price' => '30000',
+              'avatar' => '@drawable/2rasa'
+             ],
+             [
+              'restaurant_id' => '13',
+              'name' => 'Zuper Box KFC',
+              'notes' => '1 Zuper Krunch, 1 ayam goreng, satu porsi nasi, dan satu mocha float',
+              'price' => '40000',
+              'avatar' => '@drawable/box'
+             ],
+             [
+              'restaurant_id' => '13',
+              'name' => 'Zuper Krunch',
+              'notes' => 'Zuper lembut bunnya, Zuper renyah dagingnya, Zuper Krunch pastinya',
+              'price' => '20000',
+              'avatar' => '@drawable/krunch'
              ]
 
             ]);
