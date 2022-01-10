@@ -21,7 +21,8 @@ class CommentController extends Controller
                         ->where('restaurant_id', $request->restaurant_id)
                         ->first();
 
-        if($check){
+
+        if(!$check){
             $comments = new Comment;
             $comments->user_id = $request->id;
             $comments->restaurant_id = $request->restaurant_id;
