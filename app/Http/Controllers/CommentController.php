@@ -17,34 +17,39 @@ class CommentController extends Controller
             'rating' => 'required'
         ]);
 
-        $comments = DB::select("SELECT *
+        $check = DB::select("SELECT *
                     FROM comments
                     WHERE user_id = $request->id
                     AND restaurant_id = $request->restaurant_id");
 
-        $comments = new Comment;
-        $comments->user_id = $request->id;
-        $comments->restaurant_id = $request->restaurant_id;
-        $comments->comment = $request->comment;
-        $comments->rating = $request->rating;
-        $comments->save();
+        if($check){
+            $comments = new Comment;
+            $comments->user_id = $request->id;
+            $comments->restaurant_id = $request->restaurant_id;
+            $comments->comment = $request->comment;
+            $comments->rating = $request->rating;
+            $comments->save();
 
 
-        $sum = Comment::where('restaurant_id', $request->restaurant_id)
-        ->groupBy('restaurant_id')
-        ->sum('rating');
+            $sum = Comment::where('restaurant_id', $request->restaurant_id)
+            ->groupBy('restaurant_id')
+            ->sum('rating');
 
-        $count = Comment::where('restaurant_id', $request->restaurant_id)->count();
+            $count = Comment::where('restaurant_id', $request->restaurant_id)->count();
 
-        $rating = $sum/ $count;
-        $rating = round($rating,1);
+            $rating = $sum/ $count;
+            $rating = round($rating,1);
 
-        $restaurant = Restaurant::find($request->restaurant_id);
-        $restaurant->rating = $rating;
-        $restaurant->save();
+            $restaurant = Restaurant::find($request->restaurant_id);
+            $restaurant->rating = $rating;
+            $restaurant->save();
 
 
-        return response()->json(['message' => 'Your comment added successfully', 'rating' => $rating]);
+            return response()->json(['message' => 'Your comment added successfully', 'rating' => $rating]);
+        }else{
+            return response()->json(['message' => 'Your already comment', 'rating' => 0.0]);
+        }
+        
         
     }
 
