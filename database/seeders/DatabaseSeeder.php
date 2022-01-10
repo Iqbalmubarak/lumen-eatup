@@ -375,7 +375,7 @@ class DatabaseSeeder extends Seeder
               'name' => 'Zuper Krunch',
               'notes' => 'Zuper lembut bunnya, Zuper renyah dagingnya, Zuper Krunch pastinya',
               'price' => '20000',
-              'avatar' => '@drawable/krunch'
+              'avatar' => '@drawable/burger'
              ]
 
             ]);
