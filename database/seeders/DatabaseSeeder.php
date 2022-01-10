@@ -354,14 +354,14 @@ class DatabaseSeeder extends Seeder
               'name' => 'Gelato 1 Rasa',
               'notes' => 'Rasa hazelnut coklat, vanilla, matcha, dll',
               'price' => '25000',
-              'avatar' => '@drawable/1rasa'
+              'avatar' => '@drawable/rasaa'
              ],
              [
               'restaurant_id' => '12',
               'name' => 'Gelato 2 Rasa',
               'notes' => 'Rasa hazelnut coklat, vanilla, matcha, dll',
               'price' => '30000',
-              'avatar' => '@drawable/2rasa'
+              'avatar' => '@drawable/rasa2'
              ],
              [
               'restaurant_id' => '13',
