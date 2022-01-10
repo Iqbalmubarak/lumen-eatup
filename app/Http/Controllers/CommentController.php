@@ -17,10 +17,9 @@ class CommentController extends Controller
             'rating' => 'required'
         ]);
 
-        $check = DB::select("SELECT *
-                    FROM comments
-                    WHERE user_id = $request->id
-                    AND restaurant_id = $request->restaurant_id");
+        $check = Comment::where('user_id', $request->id)
+                        ->where('restaurant_id', $request->restaurant_id)
+                        ->first();
 
         if($check){
             $comments = new Comment;
