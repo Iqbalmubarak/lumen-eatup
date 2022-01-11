@@ -176,6 +176,16 @@ class DatabaseSeeder extends Seeder
             'avatar' => '@drawable/coffee3',
             'status' => '1',
             'rating' => '0.0'
+          ],
+          [
+            'type_id' => '6',
+            'name' => 'GB Express Pauh',
+            'address' => 'Jalan Dr. Moh. Hatta, Kapala Koto',
+            'latitude' => '-0.92583',
+            'longtitude' => '100.43556',
+            'avatar' => '@drawable/fastfood2',
+            'status' => '1',
+            'rating' => '0.0'
           ]
 
 
