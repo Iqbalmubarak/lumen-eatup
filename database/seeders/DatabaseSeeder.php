@@ -166,6 +166,16 @@ class DatabaseSeeder extends Seeder
             'avatar' => '@drawable/fastfood2',
             'status' => '1',
             'rating' => '0.0'
+          ],
+          [
+            'type_id' => '3',
+            'name' => 'Parewa Coffee',
+            'address' => 'Jalan M. Hatta',
+            'latitude' => '-0.92389',
+            'longtitude' => '100.44083',
+            'avatar' => '@drawable/coffee3',
+            'status' => '1',
+            'rating' => '0.0'
           ]
 
 
@@ -376,6 +386,20 @@ class DatabaseSeeder extends Seeder
               'notes' => 'Zuper lembut bunnya, Zuper renyah dagingnya, Zuper Krunch pastinya',
               'price' => '20000',
               'avatar' => '@drawable/burger'
+             ],
+             [
+              'restaurant_id' => '14',
+              'name' => 'Oreo Cookies & Cream',
+              'notes' => 'Perpaduan antara oreo, cookies dan cream',
+              'price' => '25000',
+              'avatar' => '@drawable/oreo'
+             ],
+             [
+              'restaurant_id' => '14',
+              'name' => 'Es Kopi Susu',
+              'notes' => 'Es kopi susu signature',
+              'price' => '18000',
+              'avatar' => '@drawable/susu'
              ]
 
             ]);
