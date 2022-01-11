@@ -400,7 +400,7 @@ class DatabaseSeeder extends Seeder
              [
               'restaurant_id' => '14',
               'name' => 'Kopi susu hot',
-              'notes' => 'Perpaduan antara oreo, cookies dan cream',
+              'notes' => 'Kopi susu hangat ala parewa coffee',
               'price' => '20000',
               'avatar' => '@drawable/parewa1'
              ],
