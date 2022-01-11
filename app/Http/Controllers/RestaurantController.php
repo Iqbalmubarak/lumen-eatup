@@ -168,6 +168,8 @@ class RestaurantController extends Controller
         $restaurant->type_id = $request->type_id;
         $restaurant->name = $request->name;
         $restaurant->address = $request->address;
+        $restaurant->latitude = $request->latitude;
+        $restaurant->longtitude = $request->longtitude;
         $restaurant->avatar = $request->avatar;
         $restaurant->status = $request->status;
         $restaurant->rating = $request->rating;
