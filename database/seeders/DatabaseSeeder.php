@@ -399,17 +399,17 @@ class DatabaseSeeder extends Seeder
              ],
              [
               'restaurant_id' => '14',
-              'name' => 'Oreo Cookies & Cream',
+              'name' => 'Kopi susu hot',
               'notes' => 'Perpaduan antara oreo, cookies dan cream',
-              'price' => '25000',
-              'avatar' => '@drawable/oreo'
+              'price' => '20000',
+              'avatar' => '@drawable/parewa1'
              ],
              [
               'restaurant_id' => '14',
               'name' => 'Es Kopi Susu',
               'notes' => 'Es kopi susu signature',
               'price' => '18000',
-              'avatar' => '@drawable/susu'
+              'avatar' => '@drawable/parewa2'
              ]
 
             ]);
